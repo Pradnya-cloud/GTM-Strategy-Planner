@@ -1,0 +1,28 @@
+<!doctype html><html><head><meta charset="utf-8"><title>LaunchPilot AI GTM Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script><style>
+body{margin:0;font-family:Arial;background:#0b1020;color:#eef2ff}.wrap{padding:28px;max-width:1500px;margin:auto}
+.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}.card,.panel{background:#151c32;border:1px solid #293452;border-radius:14px;padding:18px}.panel{margin-top:16px}
+.k{color:#9aa6c0;font-size:12px;text-transform:uppercase}.v{font-size:25px;font-weight:700;margin-top:8px}.charts{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:900px){.grid,.charts{grid-template-columns:1fr 1fr}}@media(max-width:600px){.grid,.charts{grid-template-columns:1fr}}
+</style></head><body><div class="wrap"><h1>Go-To-Market Strategy Planner</h1><p>LaunchPilot AI · Executive Product Launch Dashboard</p><div class="grid">
+<div class="card"><div class="k">Market Demand</div><div class="v">79/100</div></div>
+<div class="card"><div class="k">Expected Revenue</div><div class="v">$665.3K</div></div>
+<div class="card"><div class="k">Conversion Rate</div><div class="v">13.5%</div></div>
+<div class="card"><div class="k">Avg CAC</div><div class="v">$51</div></div>
+<div class="card"><div class="k">Launch Readiness</div><div class="v">82/100</div></div></div><div class="charts">
+<div class="panel"><h3>TAM · SAM · SOM</h3><canvas id="market"></canvas></div>
+<div class="panel"><h3>Customer Segment Opportunity</h3><canvas id="seg"></canvas></div>
+<div class="panel"><h3>Channel Effectiveness</h3><canvas id="channel"></canvas></div>
+<div class="panel"><h3>Conversion Funnel</h3><canvas id="funnel"></canvas></div>
+<div class="panel"><h3>Revenue Forecast</h3><canvas id="revenue"></canvas></div>
+<div class="panel"><h3>Launch Readiness</h3><canvas id="ready"></canvas></div></div><div class="panel"><h3>GTM Risk Matrix</h3><p>Priority risks: pricing validation, positioning, conversion, CAC, onboarding and retention.</p></div>
+<div class="panel"><h3>30–60–90 Roadmap</h3><p><b>0–30:</b> research, ICP, positioning, pricing, beta QA · <b>31–60:</b> launch channels, trials, demos · <b>61–90:</b> optimize CAC, activation, retention and scale.</p></div>
+<div class="panel"><h3>Strategic Recommendations</h3><ol><li>Prioritize B2B SaaS product and growth teams.</li><li>Lead with LinkedIn, webinars, SEO and partnerships.</li><li>Use tiered subscription pricing with a trial.</li><li>Gate scaling on activation, CAC and retention.</li><li>Differentiate around one integrated GTM workflow.</li></ol></div></div><script>
+const opt={responsive:true,plugins:{legend:{labels:{color:'#eef2ff'}}}};
+new Chart(document.getElementById('market'),{type:'bar',data:{labels:["TAM", "SAM", "SOM"],datasets:[{label:'Market ($M)',data:[24, 8.4, 0.84]}]},options:opt});
+new Chart(document.getElementById('seg'),{type:'bar',data:{labels:["SaaS Startups", "E-commerce Brands", "Mid-Market SaaS", "EdTech Companies", "B2B SaaS", "Digital Agencies", "Consulting Firms"],datasets:[{label:'Revenue potential',data:[145845.0, 102493.0, 73600.0, 72560.0, 69602.0, 57667.0, 48597.0]}]},options:opt});
+new Chart(document.getElementById('channel'),{type:'bar',data:{labels:["LinkedIn", "Google Ads", "Email", "SEO", "Webinars", "YouTube", "Meta Ads", "Partnerships", "Community Marketing", "Influencers"],datasets:[{label:'Effectiveness',data:[77.5, 81.8, 75.7, 77.2, 74.8, 79.4, 79.0, 80.8, 76.9, 84.7]}]},options:opt});
+new Chart(document.getElementById('funnel'),{type:'bar',data:{labels:['Awareness','Interest','Lead','Qualified','Trial/Demo','Conversion','Activation','Retention'],datasets:[{label:'Indexed volume',data:[10000,4200,1800,900,600,180,145,120]}]},options:opt});
+new Chart(document.getElementById('revenue'),{type:'line',data:{labels:['M1','M2','M3','M4','M5','M6','M7','M8','M9','M10','M11','M12'],datasets:[{label:'Base Revenue',data:[11880,14256,16632,19008,21384,23760,26136,28512,30888,33264,35640,38016]}]},options:opt});
+new Chart(document.getElementById('ready'),{type:'radar',data:{labels:['Product','Engineering','Sales','Marketing','Support','Legal','Operations'],datasets:[{label:'Readiness',data:[88,84,79,86,82,90,81]}]},options:opt});
+</script></body></html>
